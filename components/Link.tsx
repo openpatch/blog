@@ -1,7 +1,13 @@
 import NLink from "next/link";
 import MLink from "@material-ui/core/Link";
 
-const Link = ({ href, isExternal, ...props }) =>
+interface LinkProps {
+  href: string;
+  isExternal?: boolean;
+  children?: any;
+}
+
+const Link = ({ href, isExternal, ...props }: LinkProps) =>
   isExternal ? (
     <MLink href={href} {...props} />
   ) : (

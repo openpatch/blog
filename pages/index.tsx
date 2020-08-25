@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
 }));
-
 export default function DocsPage() {
   const classes = useStyles();
   return (

@@ -20,6 +20,7 @@ declare module "*.mdx" {
     description: string;
     publishedAt: number;
     __resourcePath: string;
+    map: any;
     // type additional properties according to
     // the front-matter you define
   };
