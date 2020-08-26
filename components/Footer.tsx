@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     padding: theme.spacing(1),
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.text.secondary,
   },
   copyright: {
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.text.secondary,
     padding: theme.spacing(1),
     textAlign: "center",
   },
