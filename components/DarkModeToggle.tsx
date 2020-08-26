@@ -1,11 +1,14 @@
 import useDarkMode from "use-dark-mode";
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import DarkIcon from "@material-ui/icons/Brightness2";
+import LightIcon from "@material-ui/icons/BrightnessHigh";
+
 export default () => {
   const darkMode = useDarkMode();
 
   return (
-    <Button color="inherit" onClick={darkMode.toggle}>
-      {darkMode.value ? "Light" : "Dark"}
-    </Button>
+    <IconButton color="inherit" onClick={darkMode.toggle}>
+      {darkMode.value ? <LightIcon /> : <DarkIcon />}
+    </IconButton>
   );
 };

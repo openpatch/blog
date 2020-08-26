@@ -24,6 +24,7 @@ const Navbar = () => {
         <Toolbar>
           <Typography
             variant="h6"
+            color="inherit"
             component={Link}
             href="/"
             className={classes.title}

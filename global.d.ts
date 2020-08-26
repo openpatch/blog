@@ -21,6 +21,7 @@ declare module "*.mdx" {
     publishedAt: number;
     __resourcePath: string;
     map: any;
+    sort: any;
     // type additional properties according to
     // the front-matter you define
   };

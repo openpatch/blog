@@ -5,8 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { frontMatter as blogPosts } from "./**/*.mdx";
 
 import Link from "components/Link";
-import Navbar from "components/Navbar";
-import Main from "components/Main";
+import MainLayout from "components/MainLayout";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -20,25 +19,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function DocsPage() {
   const classes = useStyles();
+  // latest first
+  blogPosts.sort((b1, b2) => (b1.publishedAt > b2.publishedAt ? -1 : 1));
   return (
-    <>
-      <Navbar />
-      <Main>
-        <Typography variant="h2" className={classes.title}>
-          All Posts
-        </Typography>
-        {blogPosts.map((blogPost) => (
-          <Box key={blogPost.__resourcePath} mb={3}>
-            <Link href={formatPath(blogPost.__resourcePath)}>
-              <Typography className={classes.postTitle} variant="h3">
-                {blogPost.title}
-              </Typography>
-            </Link>
-            <Typography>{blogPost.abstract}</Typography>
-          </Box>
-        ))}
-      </Main>
-    </>
+    <MainLayout>
+      <Typography variant="h2" className={classes.title}>
+        All Posts
+      </Typography>
+      {blogPosts.map((blogPost) => (
+        <Box key={blogPost.__resourcePath} mb={3}>
+          <Link href={formatPath(blogPost.__resourcePath)}>
+            <Typography className={classes.postTitle} variant="h3">
+              {blogPost.title}
+            </Typography>
+          </Link>
+          <Typography>{blogPost.abstract}</Typography>
+        </Box>
+      ))}
+    </MainLayout>
   );
 }
 
